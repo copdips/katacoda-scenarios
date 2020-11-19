@@ -1,0 +1,26 @@
+{
+  "title": "katacoda",
+  "description": "katacoda",
+  "difficulty": "Beginner",
+  "time": "2 hours",
+  "details": {
+    "steps": [
+      {
+        "title": "Step 1",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "golang:1.14"
+  }
+}
