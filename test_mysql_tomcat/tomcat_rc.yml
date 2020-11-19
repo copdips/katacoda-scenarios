@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myweb
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myweb
+      release: stable
+  template:
+    metadata:
+      labels:
+        app: myweb
+        release: stable
+        env: test
+    spec:
+      containers:
+        - name: myweb
+          image: tomcat
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: MYSQL_SERVICE_HOST
+              value: my_sql_service_ip_to_replace
+            - name: MYSQL_SERVICE_PORT
+              value: "3306"

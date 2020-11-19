@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myweb
+  namespace: default
+spec:
+  selector:
+    app: myweb
+    release: stable
+  type: NodePort
+  ports:
+    - name: http
+      port: 8080
+      nodePort: 30000
+
